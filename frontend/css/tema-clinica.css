@@ -1,0 +1,113 @@
+
+/* Tema visual: clínica infantil inspirada em brinquedos e cuidados médicos.
+   Camada exclusivamente visual; não altera scripts, rotas ou integrações. */
+:root {
+  --clinic-pink: #ef79a8;
+  --clinic-pink-dark: #c94d82;
+  --clinic-pink-soft: #fff0f6;
+  --clinic-lilac: #a99be8;
+  --clinic-lilac-dark: #7164b6;
+  --clinic-mint: #bfeee2;
+  --clinic-teal: #4aab9c;
+  --clinic-ink: #554765;
+  --clinic-border: #f2c3d8;
+}
+html { min-height: 100%; }
+body {
+  font-family: 'Nunito', 'Trebuchet MS', Arial, sans-serif !important;
+  color: var(--clinic-ink);
+  background:
+    radial-gradient(circle at 8% 12%, rgba(255,255,255,.95) 0 4px, transparent 5px),
+    radial-gradient(circle at 91% 23%, rgba(255,255,255,.9) 0 5px, transparent 6px),
+    radial-gradient(circle at 18% 88%, rgba(191,238,226,.55) 0 7px, transparent 8px),
+    linear-gradient(135deg, #f4edff 0%, #fff0f6 48%, #e8faf6 100%) !important;
+  background-size: 120px 120px, 145px 145px, 170px 170px, cover !important;
+}
+.container, .tv-container, .painel, .conteudo {
+  border-color: var(--clinic-pink) !important;
+}
+.container {
+  border-radius: 26px !important;
+  box-shadow: 0 14px 32px rgba(117, 82, 137, .14), 0 5px 0 #f6c5da !important;
+}
+h1, h2, h3, .titulo, .titulo-area h1, .titulo-area h2 {
+  color: var(--clinic-pink-dark) !important;
+  text-shadow: 1px 2px 0 rgba(255, 222, 236, .75);
+}
+p, label, small, .subtitulo { color: #786781; }
+.cabecalho {
+  border-color: #d9c9f3 !important;
+}
+.icone, .icone-medico {
+  background: linear-gradient(145deg, #fff0f7, #eee9ff) !important;
+  border-color: #e5a9cb !important;
+  box-shadow: 0 4px 0 #e2d6f5 !important;
+}
+input, select, textarea {
+  font-family: 'Nunito', 'Trebuchet MS', Arial, sans-serif !important;
+  color: var(--clinic-ink) !important;
+  background-color: #fffafd !important;
+  border-color: #e6c8eb !important;
+  border-radius: 14px !important;
+}
+input::placeholder, textarea::placeholder { color: #b19bb9 !important; }
+input:focus, select:focus, textarea:focus {
+  border-color: var(--clinic-pink) !important;
+  box-shadow: 0 0 0 4px rgba(239,121,168,.15) !important;
+  outline: none !important;
+}
+button, .btn-tv, .btn-abrir-tv, .pdf, .voltar {
+  font-family: 'Nunito', 'Trebuchet MS', Arial, sans-serif !important;
+  font-weight: 800 !important;
+  border-radius: 15px !important;
+  background: linear-gradient(135deg, #ef79a8, #d95d96) !important;
+  color: #fff !important;
+  border: 0 !important;
+  box-shadow: 0 4px 0 #b94b80 !important;
+  transition: transform .16s ease, box-shadow .16s ease, filter .16s ease !important;
+}
+button:hover, .btn-tv:hover, .btn-abrir-tv:hover, .pdf:hover, .voltar:hover {
+  filter: brightness(1.05) saturate(1.04);
+  transform: translateY(-1px);
+}
+button:active, .btn-tv:active, .btn-abrir-tv:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #b94b80 !important;
+}
+.card, .campo, .pacientes-fila, .fila-item, .foto-box, .painel, .bloco {
+  border-color: #ead7f0 !important;
+  border-radius: 17px !important;
+  box-shadow: 0 5px 14px rgba(117,82,137,.07) !important;
+}
+.card, .campo, .fila-item { background-color: rgba(255,255,255,.94) !important; }
+.pacientes-fila, .foto-box { background-color: #fff4f8 !important; }
+.fila-item:hover { border-color: #e8a5c8 !important; }
+.verde { background: #54b99f !important; color: #fff !important; }
+.amarelo { background: #f4c76b !important; color: #624b29 !important; }
+.vermelho { background: #e46c87 !important; color: #fff !important; }
+.rodape { color: #9a82a4 !important; }
+a { color: var(--clinic-lilac-dark); }
+hr { border-color: #e8d8f0; }
+@media (max-width: 650px) {
+  .container { padding: 22px !important; }
+  .cabecalho { flex-wrap: wrap; }
+  .dados, .duas-colunas { grid-template-columns: 1fr !important; }
+}
+/* A impressão de formulários continua limpa e legível. */
+@media print {
+  body { background: #fff !important; }
+  .container { box-shadow: none !important; }
+}
+
+/* Identidade visual da clínica: bichinho de pelúcia + símbolo médico */
+.icone-medico {
+  font-size: 0 !important;
+  position: relative;
+}
+.icone-medico::after {
+  content: "🧸";
+  font-size: 38px;
+  line-height: 1;
+}
+.container::before { content: "🩺" !important; }
+.container::after { content: "🧸" !important; }
